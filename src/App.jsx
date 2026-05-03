@@ -190,7 +190,7 @@ const TRANSLATIONS = {
     'cart.communityRating': 'Vlerësimi i komunitetit',
     'cart.saveToPlan': 'Ruaj në Plan',
     'cart.close': 'Mbyll',
-    'cart.all': 'Të gjitha',
+    // 'cart.all': 'Të gjitha',
     'admin.title': 'Plani Im i Shikimit',
     'admin.subtitle':
       'Finalizo qytetin, rendin e shikimit, orarin, llojin e ulëses dhe numrin e biletave për çdo film.',
