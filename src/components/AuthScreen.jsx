@@ -116,13 +116,19 @@ export default function AuthScreen({
 
         <div className="auth-card">
           <div className="auth-card-head">
-            <h2>{t('auth.signIn')}</h2>
-            <div className="lang-switch" role="group" aria-label={t('app.language')}>
+            <h2 data-testid="signin-title">{t('auth.signIn')}</h2>
+            <div
+              className="lang-switch"
+              role="group"
+              aria-label={t('app.language')}
+              data-testid="language-switch"
+            >
               <button
                 type="button"
                 className={language === 'en' ? 'active' : ''}
                 onClick={() => onLanguageChange('en')}
                 aria-label={t('app.langEnglish')}
+                data-testid="lang-en"
               >
                 EN
               </button>
@@ -131,6 +137,7 @@ export default function AuthScreen({
                 className={language === 'sq' ? 'active' : ''}
                 onClick={() => onLanguageChange('sq')}
                 aria-label={t('app.langAlbanian')}
+                data-testid="lang-al"
               >
                 AL
               </button>
