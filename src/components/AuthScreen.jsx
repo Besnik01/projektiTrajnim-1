@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BrandLogo from './BrandLogo';
 
 const DEMO_CREDENTIALS = {
   email: 'instructor@cineplex.com',
@@ -103,8 +104,7 @@ export default function AuthScreen({
 
       <div className="auth-layout">
         <section className="auth-visual">
-          <p className="eyebrow">{t('app.qaProject')}</p>
-          <h1>Cineplex Stream</h1>
+          <BrandLogo eyebrow={t('app.qaProject')} title="Cineplex Stream" headingTag="h1" />
           <p>{t('auth.visualDescription')}</p>
 
           <div className="auth-bullets">
