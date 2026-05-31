@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { Loginhelper } from './helperLoginProjekti';
 
-
 //POSITIVE SCENARIOUS
 
 test('Create Menu Item', async ({ page }) => {
@@ -15,12 +14,13 @@ test('Create Menu Item', async ({ page }) => {
   await page.getByRole('button', { name: 'Save Item' }).click();
 
   //Assert
- await expect(page.getByText('Save Item')).toBeVisible();
+  await expect(page.getByText('Save Item')).toBeVisible();
 });
 
  test('select Sallata category', async ({ page }) => {
   //Arrange
   const menu = 'Sallata'
+
   //Act
   await Loginhelper(page) 
   await page.getByText('Create Menu Item').nth(0).click();
@@ -30,8 +30,8 @@ test('Create Menu Item', async ({ page }) => {
   await page.locator('input[type="number"]') .fill('4.50');
   await page.getByRole('button', { name: 'Save Item' }).click();
 
-    //Assert
- await expect(page.getByText('Save Item')).toBeVisible();
+  //Assert
+  await expect(page.getByText('Save Item')).toBeVisible();
 });
 
  test('select Hamburger category', async ({ page }) => {
@@ -44,12 +44,12 @@ test('Create Menu Item', async ({ page }) => {
   await page.locator('input[type="number"]') .fill('7.00');
   await page.getByRole('button', { name: 'Save Item' }).click();
 
-    //Assert
- await expect(page.getByText('Save Item')).toBeVisible();
+  //Assert
+  await expect(page.getByText('Save Item')).toBeVisible();
 });
 
  test('Select samun category', async ({ page }) => {
-    //Act
+  //Act
   await Loginhelper(page) 
   await page.getByText('Create Menu Item').nth(0).click();
   await page.locator('select').selectOption({ label: 'Samun' });
@@ -58,17 +58,17 @@ test('Create Menu Item', async ({ page }) => {
   await page.locator('input[type="number"]') .fill('2.00');
   await page.getByRole('button', { name: 'Save Item' }).click();
 
-    //Assert
- await expect(page.getByText('Save Item')).toBeVisible();
+  //Assert
+  await expect(page.getByText('Save Item')).toBeVisible();
 });
-
 
 
  ///NEGATIVE SCENARIOUS 
 
- test('User order without description', async ({ page }) => {
-    //Arrange
-    const menu = 'hamburger'
+test('User order without description', async ({ page }) => {
+  //Arrange
+  const menu = 'Hamburger'
+
   //Act
   await Loginhelper(page) 
   await page.getByText('Create Menu Item').nth(0).click();
@@ -78,12 +78,12 @@ test('Create Menu Item', async ({ page }) => {
   await page.locator('input[type="number"]') .fill('7.00');
   await page.getByRole('button', { name: 'Save Item' }).click();
 
-    //Assert
- await expect(page.getByText('Description is required.')).toBeVisible();
+  //Assert
+  await expect(page.getByText('Description is required.')).toBeVisible();
 });
 
  test('User order without item name', async ({ page }) => {
-    //Act
+  //Act
   await Loginhelper(page) 
   await page.getByText('Create Menu Item').nth(0).click();
   await page.locator('select').selectOption({ label: 'Hamburger' });
@@ -92,14 +92,15 @@ test('Create Menu Item', async ({ page }) => {
   await page.locator('input[type="number"]') .fill('7.00');
   await page.getByRole('button', { name: 'Save Item' }).click();
 
-    //Assert
- await expect(page.getByText('Item name is required.')).toBeVisible();
+  //Assert
+  await expect(page.getByText('Item name is required.')).toBeVisible();
 });
 
 
  test('User order without price', async ({ page }) => {
-    //Arrange
-    const menu = 'hamburger'
+  //Arrange
+  const menu = 'Hamburger'
+
   //Act
   await Loginhelper(page) 
   await page.getByText('Create Menu Item').nth(0).click();
@@ -109,12 +110,11 @@ test('Create Menu Item', async ({ page }) => {
   await page.locator('input[type="number"]') .fill('');
   await page.getByRole('button', { name: 'Save Item' }).click();
 
-    //Assert
- await expect(page.getByText('Price must be a positive number.')).toBeVisible();
+  //Assert
+  await expect(page.getByText('Price must be a positive number.')).toBeVisible();
 });
 
 test('Reset form after entering data', async ({ page }) => {
-
   // Act
   await Loginhelper(page)  
   await page.locator('select').selectOption({ label: 'Pizza' });

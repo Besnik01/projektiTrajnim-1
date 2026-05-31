@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { Loginhelper } from '../Projekti3Ardit/helperLoginProjekti'
 
 test('should login with valid credentials', async ({ page }) => {
-
   //Arrange
   const email ='manager@restaurantmenu.com';
   const password = 'Menu123';
@@ -17,5 +15,3 @@ test('should login with valid credentials', async ({ page }) => {
   //Assert
   await expect(page.getByText('Logout').nth(0)).toBeVisible();
 });
-
- 
