@@ -4,7 +4,6 @@ import { PorositBurger } from './porositBurger';
 import { PorositPizza } from './porositPizza';
 import { PorositSallate } from './porositSallate';
 
-
 // test('Valid email and password', async ({ page }) => {
 //     //Arrange
 //     const email  = 'manager@restaurantmenu.com'
@@ -22,7 +21,6 @@ import { PorositSallate } from './porositSallate';
 //     await expect(page.getByText('Logout')).toBeVisible()
 // })
 
-
 //Test Negativ 
 test('Negative Test - Burger', async({page}) =>{
     //Arrange
@@ -38,10 +36,8 @@ test('Negative Test - Burger', async({page}) =>{
     await expect(page.getByText(LlojiBurgerit)).not.toBeVisible()
 })
 
-
 test('Archieve Test - Burger', async({page}) =>{
-    
-     //Arrange
+    //Arrange
     const LlojiBurgerit = "Hamburger Viqi"
 
     //Act
@@ -99,4 +95,3 @@ test('Search Test - Sallata', async({page}) =>{
     //Assert
     await expect(page.getByText(sallata).nth(0)).toBeVisible()
 })
-
