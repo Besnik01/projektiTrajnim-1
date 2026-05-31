@@ -1,7 +1,6 @@
 import {test, expect } from "@playwright/test"
 import { pro2, prostory2 } from "./helperLogin"
 
-
     test('Approving a story in repoort section', async ({page}) => {
         //Act
        await pro2(page)
@@ -14,4 +13,3 @@ import { pro2, prostory2 } from "./helperLogin"
     //Assert
         await expect(page.getByText('Reported story approved.')).toBeVisible();
     })
-

@@ -1,6 +1,6 @@
 import {test, expect } from "@playwright/test"
 
-    test('Login with wrong credicionals', async ({page}) => {
+test('Login with wrong credicionals', async ({page}) => {
         //Act
         await page.goto('http://localhost:5173/')
         await page.getByText('Projekti 2').click()
@@ -10,4 +10,4 @@ import {test, expect } from "@playwright/test"
         
         //Assert
          await expect(page.getByText('Invalid credentials.')).toBeVisible();
-    })
+})

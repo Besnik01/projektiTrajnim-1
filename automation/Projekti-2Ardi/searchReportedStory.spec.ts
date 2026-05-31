@@ -1,7 +1,6 @@
 import {test, expect } from "@playwright/test"
 import { pro2, prostory2 } from "./helperLogin"
 
-
     test('Searching a story in report section', async ({page}) => {
         //Act
         await pro2(page)

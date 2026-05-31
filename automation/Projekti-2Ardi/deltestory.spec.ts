@@ -2,7 +2,7 @@ import {test, expect } from "@playwright/test"
 import { pro2, prostory2 } from "./helperLogin"
 
 
-    test('Delete a story in new desk', async ({page}) => {
+test('Delete a story in new desk', async ({page}) => {
     //Act
     await pro2(page)
     await prostory2(page)
@@ -11,4 +11,4 @@ import { pro2, prostory2 } from "./helperLogin"
  
     //Assert
     await expect(page.getByText('Storje')).not.toBeVisible();
-    })
+})
