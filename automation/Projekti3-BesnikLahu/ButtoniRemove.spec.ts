@@ -9,5 +9,5 @@ test ('Te behet Remove porosia',async ({ page }) => {
     await page.getByText('Remove').nth(1).click();
 
     //Assert
-    await expect (page.getByText('No menu items found.')).toBeVisible;
+    await expect(page.getByText('No menu items found.')).toBeVisible();
 });

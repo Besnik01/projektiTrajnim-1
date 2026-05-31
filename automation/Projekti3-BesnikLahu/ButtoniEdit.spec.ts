@@ -2,9 +2,10 @@ import { test, expect } from '@playwright/test';
 import { loginprojekt3 } from  './loginProjekt3';
 import { krijimiiporosise } from './Krijimiiporosise';
 
-const amount = "4.00"
-
 test ('Duhet te behet edit ndryshojme qmimin', async ({ page }) => {
+    //Arrange
+    const amount = "4.00"
+
     //Act
     await loginprojekt3(page)
     await krijimiiporosise(page)
