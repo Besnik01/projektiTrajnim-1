@@ -6,7 +6,6 @@ test('krijimi i qr code', async ({ page }) => {
 await loginHelperProjekti1(page)
 await page.getByText('Logout').click();
 
-
 //Assert
 await expect(page.getByText('Sign In To Project 1').nth(0)).toBeVisible()
 });

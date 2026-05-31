@@ -10,7 +10,6 @@ await page.getByText('Login').nth(1).click();
 
 //Assert
 await expect(page.getByText('QA QR Studio')).toBeVisible()
-
 });
 
 test('funksioni Back To Main Login', async ({ page }) => {
@@ -19,7 +18,7 @@ await page.goto('https://qa-trajnim.netlify.app/');
 await page.getByText('Projekti 1').click();
 await page.getByText('Back To Main Login').click();
 
+//Assert
 await expect(page.getByText('Projekti 1')).toBeVisible()
-
 })
 
